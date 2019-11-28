@@ -13,6 +13,6 @@ public class QuickController {
     @ResponseBody
     @RequestMapping("/quick")
     public String quick(){
-        return "Hello ";
+        return "Hello quick";
     }
 }
