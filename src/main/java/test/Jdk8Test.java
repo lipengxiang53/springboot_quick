@@ -22,16 +22,16 @@ public class Jdk8Test {
                 new Apple(155, "green"),
                 new Apple(120, "red"));
         List<Apple> tmp = new ArrayList<>();
-//        //[Apple{color='green', weight=80}, Apple{color='green', weight=155}, Apple{color='red', weight=120}]
+        //[Apple{color='green', weight=80}, Apple{color='green', weight=155}, Apple{color='red', weight=120}]
         System.out.println(inventory);
-//
-//        inventory = inventory.stream().filter(Apple :: isGreenApple).collect(toList());
-//        //[Apple{color='green', weight=80}, Apple{color='green', weight=155}]
-//        System.out.println(inventory);
-//
-//        inventory.removeIf(apple -> apple.getWeight() == 80);
-//        //[Apple{color='green', weight=155}]
-//        System.out.println(inventory);
+
+        inventory = inventory.stream().filter(Apple :: isGreenApple).collect(toList());
+        //[Apple{color='green', weight=80}, Apple{color='green', weight=155}]
+        System.out.println(inventory);
+
+        inventory.removeIf(apple -> apple.getWeight() == 80);
+        //[Apple{color='green', weight=155}]
+        System.out.println(inventory);
 
 
         tmp = inventory.stream().filter((Apple a) -> a.getWeight() > 150).collect(toList());
@@ -40,6 +40,7 @@ public class Jdk8Test {
 
         tmp = inventory.parallelStream().filter((Apple a) -> a.getWeight() > 150).collect(toList());
         System.out.println(tmp);
+
 
 
     }
