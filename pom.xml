@@ -25,6 +25,11 @@
             <scope>provided</scope><!-- 去除Spring Boot自带的Tomcat插件 -->
         </dependency>
 
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
         <!--web功能起步依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
