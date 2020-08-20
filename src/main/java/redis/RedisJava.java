@@ -18,14 +18,14 @@ public class RedisJava {
         System.out.println("连接成功!");
         System.out.println("服务正在运行: " + jedis.ping());
         System.out.println(jedis.get("runoobkey"));
-        jedis.rpush("k2","php");
-        jedis.rpush("k2","vue");
-        System.out.println(jedis.lrange("k2",0,-1));
+        jedis.rpush("k2", "php");
+        jedis.rpush("k2", "vue");
+        System.out.println(jedis.lrange("k2", 0, -1));
 
         Set<String> keys = jedis.keys("*");
-        Iterator<String> it =  keys.iterator();
+        Iterator<String> it = keys.iterator();
 
-        while (it.hasNext()){
+        while (it.hasNext()) {
             String next = it.next();
             System.out.println(next);
         }
